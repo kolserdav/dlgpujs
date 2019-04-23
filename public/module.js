@@ -11,7 +11,7 @@ class Module {
     constructor(){
         this.socket = io('http://localhost');
         this.socket.on('connect', function(){
-            console.log('connected');
+            console.info('Connected!');
         });
         this.socket.on('message', function(data){
             console.log(data);
@@ -28,10 +28,18 @@ class Module {
         });
 
 
-        const button = document.querySelector('#button');
-        button.addEventListener('click', () => {
+        const buttonRand = document.querySelector('#button-random');
+        buttonRand.addEventListener('click', () => {
             this.socket.send({
                 request: 0,
+                message: 'Start random'
+            });
+        })
+
+        const buttonStart = document.querySelector('#button-start');
+        buttonStart.addEventListener('click', () => {
+            this.socket.send({
+                request: 1,
                 message: 'Start train'
             });
         })

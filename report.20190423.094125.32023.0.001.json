@@ -1,0 +1,381 @@
+
+{
+  "header": {
+    "event": "Allocation failed - JavaScript heap out of memory",
+    "trigger": "FatalError",
+    "filename": "report.20190423.094125.32023.0.001.json",
+    "dumpEventTime": "2019-04-23T09:41:25Z",
+    "dumpEventTimeStamp": "1555987285946",
+    "processId": 32023,
+    "cwd": "/home/kolserdav/Documents/projects/first",
+    "commandLine": [
+      "node",
+      "brain.js"
+    ],
+    "nodejsVersion": "v11.14.0",
+    "glibcVersionRuntime": "2.28",
+    "glibcVersionCompiler": "2.12",
+    "wordSize": 64,
+    "arch": "x64",
+    "platform": "linux",
+    "componentVersions": {
+      "node": "11.14.0",
+      "v8": "7.0.276.38-node.18",
+      "uv": "1.27.0",
+      "zlib": "1.2.11",
+      "brotli": "1.0.7",
+      "ares": "1.15.0",
+      "modules": "67",
+      "nghttp2": "1.37.0",
+      "napi": "4",
+      "llhttp": "1.1.1",
+      "http_parser": "2.8.0",
+      "openssl": "1.1.1b",
+      "cldr": "34.0",
+      "icu": "63.1",
+      "tz": "2018e",
+      "unicode": "11.0"
+    },
+    "release": {
+      "name": "node",
+      "headersUrl": "https://nodejs.org/download/release/v11.14.0/node-v11.14.0-headers.tar.gz",
+      "sourceUrl": "https://nodejs.org/download/release/v11.14.0/node-v11.14.0.tar.gz"
+    },
+    "osName": "Linux",
+    "osRelease": "4.18.0-17-generic",
+    "osVersion": "#18-Ubuntu SMP Wed Mar 13 14:34:40 UTC 2019",
+    "osMachine": "x86_64",
+    "host": "robot"
+  },
+  "javascriptStack": {
+    "message": "No stack.",
+    "stack": [
+      "Unavailable."
+    ]
+  },
+  "nativeStack": [
+    {
+      "pc": "0x0000000000a6e18d",
+      "symbol": "report::TriggerNodeReport(v8::Isolate*, node::Environment*, char const*, char const*, std::string const&, v8::Local<v8::String>) [node]"
+    },
+    {
+      "pc": "0x000000000095c8a3",
+      "symbol": "node::OnFatalError(char const*, char const*) [node]"
+    },
+    {
+      "pc": "0x0000000000b3b77e",
+      "symbol": "v8::Utils::ReportOOMFailure(v8::internal::Isolate*, char const*, bool) [node]"
+    },
+    {
+      "pc": "0x0000000000b3b9b4",
+      "symbol": "v8::internal::V8::FatalProcessOutOfMemory(v8::internal::Isolate*, char const*, bool) [node]"
+    },
+    {
+      "pc": "0x0000000000f3b002",
+      "symbol": " [node]"
+    },
+    {
+      "pc": "0x0000000000f4b10f",
+      "symbol": "v8::internal::Heap::AllocateRawWithRetryOrFail(int, v8::internal::AllocationSpace, v8::internal::AllocationAlignment) [node]"
+    },
+    {
+      "pc": "0x0000000000f14fa6",
+      "symbol": "v8::internal::Factory::AllocateRawArray(int, v8::internal::PretenureFlag) [node]"
+    },
+    {
+      "pc": "0x0000000000f1596a",
+      "symbol": "v8::internal::Factory::NewFixedArrayWithFiller(v8::internal::Heap::RootListIndex, int, v8::internal::Object*, v8::internal::PretenureFlag) [node]"
+    },
+    {
+      "pc": "0x0000000000f16037",
+      "symbol": "v8::internal::Factory::NewUninitializedFixedArray(int, v8::internal::PretenureFlag) [node]"
+    },
+    {
+      "pc": "0x0000000000ec34bf",
+      "symbol": " [node]"
+    },
+    {
+      "pc": "0x0000000001193cfd",
+      "symbol": "v8::internal::Runtime_GrowArrayElements(int, v8::internal::Object**, v8::internal::Isolate*) [node]"
+    },
+    {
+      "pc": "0x000005c90a8cfc5d",
+      "symbol": ""
+    }
+  ],
+  "javascriptHeap": {
+    "totalMemory": 666234880,
+    "totalCommittedMemory": 663497360,
+    "usedMemory": 660311792,
+    "availableMemory": 862615792,
+    "memoryLimit": 1526909922,
+    "heapSpaces": {
+      "read_only_space": {
+        "memorySize": 524288,
+        "committedMemory": 42224,
+        "capacity": 515584,
+        "used": 33520,
+        "available": 482064
+      },
+      "new_space": {
+        "memorySize": 1048576,
+        "committedMemory": 17408,
+        "capacity": 1031168,
+        "used": 0,
+        "available": 1031168
+      },
+      "old_space": {
+        "memorySize": 31133696,
+        "committedMemory": 30890640,
+        "capacity": 29511680,
+        "used": 29511680,
+        "available": 0
+      },
+      "code_space": {
+        "memorySize": 1572864,
+        "committedMemory": 950368,
+        "capacity": 1511424,
+        "used": 891936,
+        "available": 619488
+      },
+      "map_space": {
+        "memorySize": 1585152,
+        "committedMemory": 1226416,
+        "capacity": 916720,
+        "used": 916720,
+        "available": 0
+      },
+      "large_object_space": {
+        "memorySize": 630370304,
+        "committedMemory": 630370304,
+        "capacity": 1489441008,
+        "used": 628957936,
+        "available": 860483072
+      },
+      "new_large_object_space": {
+        "memorySize": 0,
+        "committedMemory": 0,
+        "capacity": 0,
+        "used": 0,
+        "available": 0
+      }
+    }
+  },
+  "resourceUsage": {
+    "userCpuSeconds": 6.39922,
+    "kernelCpuSeconds": 0.85296,
+    "cpuConsumptionPercent": 38.1694,
+    "maxRss": 1510506496,
+    "pageFaults": {
+      "IORequired": 0,
+      "IONotRequired": 595842
+    },
+    "fsActivity": {
+      "reads": 112,
+      "writes": 64
+    }
+  },
+  "uvthreadResourceUsage": {
+    "userCpuSeconds": 5.05494,
+    "kernelCpuSeconds": 0.700961,
+    "cpuConsumptionPercent": 30.2942,
+    "fsActivity": {
+      "reads": 0,
+      "writes": 64
+    }
+  },
+  "libuv": [
+  ],
+  "environmentVariables": {
+    "CLUTTER_IM_MODULE": "xim",
+    "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:",
+    "LC_MEASUREMENT": "ru_UA.UTF-8",
+    "LESSCLOSE": "/usr/bin/lesspipe %s %s",
+    "LC_PAPER": "ru_UA.UTF-8",
+    "LC_MONETARY": "ru_UA.UTF-8",
+    "XDG_MENU_PREFIX": "gnome-",
+    "LANG": "en_US.UTF-8",
+    "DISPLAY": ":0",
+    "GNOME_SHELL_SESSION_MODE": "ubuntu",
+    "DISABLE_WAYLAND": "1",
+    "USERNAME": "kolserdav",
+    "XDG_VTNR": "2",
+    "GIO_LAUNCHED_DESKTOP_FILE_PID": "22958",
+    "SSH_AUTH_SOCK": "/run/user/1000/keyring/ssh",
+    "APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL": "true",
+    "LC_NAME": "ru_UA.UTF-8",
+    "XDG_SESSION_ID": "2",
+    "USER": "kolserdav",
+    "DESKTOP_SESSION": "ubuntu",
+    "QT4_IM_MODULE": "xim",
+    "PWD": "/home/kolserdav/Documents/projects/first",
+    "HOME": "/home/kolserdav",
+    "SSH_AGENT_PID": "4227",
+    "TERM_PROGRAM": "vscode",
+    "TERM_PROGRAM_VERSION": "1.33.1",
+    "QT_ACCESSIBILITY": "1",
+    "XDG_SESSION_TYPE": "x11",
+    "XDG_DATA_DIRS": "/usr/share/ubuntu:/usr/local/share:/usr/share:/var/lib/snapd/desktop",
+    "GSETTINGS_SCHEMA_DIR": "/snap/code/6/usr/share/glib-2.0/schemas",
+    "XDG_SESSION_DESKTOP": "ubuntu",
+    "LC_ADDRESS": "ru_UA.UTF-8",
+    "GJS_DEBUG_OUTPUT": "stderr",
+    "LC_NUMERIC": "ru_UA.UTF-8",
+    "GDK_PIXBUF_MODULE_FILE": "/home/kolserdav/snap/code/common/.cache/gdk-pixbuf-loaders.cache",
+    "GTK_MODULES": "gail:atk-bridge",
+    "PAPERSIZE": "a4",
+    "WINDOWPATH": "2",
+    "TERM": "xterm-256color",
+    "SHELL": "/bin/bash",
+    "QT_IM_MODULE": "ibus",
+    "XMODIFIERS": "@im=ibus",
+    "IM_CONFIG_PHASE": "2",
+    "XDG_CURRENT_DESKTOP": "ubuntu:GNOME",
+    "GPG_AGENT_INFO": "/run/user/1000/gnupg/S.gpg-agent:0:1",
+    "BAMF_DESKTOP_FILE_HINT": "/var/lib/snapd/desktop/applications/code_code.desktop",
+    "GIO_LAUNCHED_DESKTOP_FILE": "/var/lib/snapd/desktop/applications/code_code.desktop",
+    "SHLVL": "2",
+    "XDG_SEAT": "seat0",
+    "LANGUAGE": "en",
+    "GDK_PIXBUF_MODULEDIR": "/snap/code/6/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders",
+    "LC_TELEPHONE": "ru_UA.UTF-8",
+    "GDMSESSION": "ubuntu",
+    "GNOME_DESKTOP_SESSION_ID": "this-is-deprecated",
+    "XDG_CACHE_HOME": "/home/kolserdav/snap/code/common/.cache",
+    "LOGNAME": "kolserdav",
+    "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/1000/bus",
+    "XDG_RUNTIME_DIR": "/run/user/1000/snap.code",
+    "XAUTHORITY": "/run/user/1000/gdm/Xauthority",
+    "XDG_CONFIG_DIRS": "/etc/xdg/xdg-ubuntu:/etc/xdg",
+    "PATH": "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin",
+    "LC_IDENTIFICATION": "ru_UA.UTF-8",
+    "GJS_DEBUG_TOPICS": "JS ERROR;JS LOG",
+    "SESSION_MANAGER": "local/robot:@/tmp/.ICE-unix/4116,unix/robot:/tmp/.ICE-unix/4116",
+    "LESSOPEN": "| /usr/bin/lesspipe %s",
+    "GTK_IM_MODULE": "ibus",
+    "LC_TIME": "ru_UA.UTF-8",
+    "_": "/usr/bin/node",
+    "VIPSHOME": "/target"
+  },
+  "userLimits": {
+    "core_file_size_blocks": {
+      "soft": 0,
+      "hard": "unlimited"
+    },
+    "data_seg_size_kbytes": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "file_size_blocks": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "max_locked_memory_bytes": {
+      "soft": 16777216,
+      "hard": 16777216
+    },
+    "max_memory_size_kbytes": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "open_files": {
+      "soft": 1048576,
+      "hard": 1048576
+    },
+    "stack_size_bytes": {
+      "soft": 8388608,
+      "hard": "unlimited"
+    },
+    "cpu_time_seconds": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "max_user_processes": {
+      "soft": 39413,
+      "hard": 39413
+    },
+    "virtual_memory_kbytes": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    }
+  },
+  "sharedObjects": [
+    "linux-vdso.so.1",
+    "/lib/x86_64-linux-gnu/libdl.so.2",
+    "/lib/x86_64-linux-gnu/librt.so.1",
+    "/usr/lib/x86_64-linux-gnu/libstdc++.so.6",
+    "/lib/x86_64-linux-gnu/libm.so.6",
+    "/lib/x86_64-linux-gnu/libgcc_s.so.1",
+    "/lib/x86_64-linux-gnu/libpthread.so.0",
+    "/lib/x86_64-linux-gnu/libc.so.6",
+    "/lib64/ld-linux-x86-64.so.2",
+    "/home/kolserdav/Documents/projects/first/node_modules/sharp/build/Release/sharp.node",
+    "/home/kolserdav/Documents/projects/first/node_modules/sharp/build/Release/../../vendor/lib/libvips-cpp.so.42",
+    "/home/kolserdav/Documents/projects/first/node_modules/sharp/build/Release/../../vendor/lib/libvips.so.42",
+    "/home/kolserdav/Documents/projects/first/node_modules/sharp/build/Release/../../vendor/lib/libglib-2.0.so.0",
+    "/home/kolserdav/Documents/projects/first/node_modules/sharp/build/Release/../../vendor/lib/libgobject-2.0.so.0",
+    "/home/kolserdav/Documents/projects/first/node_modules/sharp/build/Release/../../vendor/lib/libpng16.so.16",
+    "/home/kolserdav/Documents/projects/first/node_modules/sharp/build/Release/../../vendor/lib/libz.so.1",
+    "/home/kolserdav/Documents/projects/first/node_modules/sharp/build/Release/../../vendor/lib/libtiff.so.5",
+    "/home/kolserdav/Documents/projects/first/node_modules/sharp/build/Release/../../vendor/lib/libjpeg.so.8",
+    "/home/kolserdav/Documents/projects/first/node_modules/sharp/build/Release/../../vendor/lib/libgmodule-2.0.so.0",
+    "/home/kolserdav/Documents/projects/first/node_modules/sharp/build/Release/../../vendor/lib/libexpat.so.1",
+    "/home/kolserdav/Documents/projects/first/node_modules/sharp/build/Release/../../vendor/lib/libgsf-1.so.114",
+    "/home/kolserdav/Documents/projects/first/node_modules/sharp/build/Release/../../vendor/lib/libxml2.so.2",
+    "/home/kolserdav/Documents/projects/first/node_modules/sharp/build/Release/../../vendor/lib/liborc-0.4.so.0",
+    "/home/kolserdav/Documents/projects/first/node_modules/sharp/build/Release/../../vendor/lib/liblcms2.so.2",
+    "/home/kolserdav/Documents/projects/first/node_modules/sharp/build/Release/../../vendor/lib/libgif.so.7",
+    "/home/kolserdav/Documents/projects/first/node_modules/sharp/build/Release/../../vendor/lib/librsvg-2.so.2",
+    "/home/kolserdav/Documents/projects/first/node_modules/sharp/build/Release/../../vendor/lib/libgio-2.0.so.0",
+    "/home/kolserdav/Documents/projects/first/node_modules/sharp/build/Release/../../vendor/lib/libgdk_pixbuf-2.0.so.0",
+    "/home/kolserdav/Documents/projects/first/node_modules/sharp/build/Release/../../vendor/lib/libcairo.so.2",
+    "/home/kolserdav/Documents/projects/first/node_modules/sharp/build/Release/../../vendor/lib/libwebpmux.so.3",
+    "/home/kolserdav/Documents/projects/first/node_modules/sharp/build/Release/../../vendor/lib/libwebp.so.7",
+    "/home/kolserdav/Documents/projects/first/node_modules/sharp/build/Release/../../vendor/lib/libexif.so.12",
+    "/home/kolserdav/Documents/projects/first/node_modules/sharp/build/Release/../../vendor/lib/libffi.so.6",
+    "/lib/x86_64-linux-gnu/libresolv.so.2",
+    "/home/kolserdav/Documents/projects/first/node_modules/sharp/build/Release/../../vendor/lib/libpangocairo-1.0.so.0",
+    "/home/kolserdav/Documents/projects/first/node_modules/sharp/build/Release/../../vendor/lib/libpangoft2-1.0.so.0",
+    "/home/kolserdav/Documents/projects/first/node_modules/sharp/build/Release/../../vendor/lib/libharfbuzz.so.0",
+    "/home/kolserdav/Documents/projects/first/node_modules/sharp/build/Release/../../vendor/lib/libpango-1.0.so.0",
+    "/home/kolserdav/Documents/projects/first/node_modules/sharp/build/Release/../../vendor/lib/libgthread-2.0.so.0",
+    "/home/kolserdav/Documents/projects/first/node_modules/sharp/build/Release/../../vendor/lib/libpixman-1.so.0",
+    "/home/kolserdav/Documents/projects/first/node_modules/sharp/build/Release/../../vendor/lib/libfontconfig.so.1",
+    "/home/kolserdav/Documents/projects/first/node_modules/sharp/build/Release/../../vendor/lib/libfreetype.so.6",
+    "/home/kolserdav/Documents/projects/first/node_modules/sharp/build/Release/../../vendor/lib/libcroco-0.6.so.3",
+    "/home/kolserdav/Documents/projects/first/node_modules/deasync/bin/linux-x64-node-11/deasync.node",
+    "/home/kolserdav/Documents/projects/first/node_modules/gl/build/Release/webgl.node",
+    "/usr/lib/x86_64-linux-gnu/libX11.so.6",
+    "/usr/lib/x86_64-linux-gnu/libXext.so.6",
+    "/usr/lib/x86_64-linux-gnu/libxcb.so.1",
+    "/usr/lib/x86_64-linux-gnu/libXau.so.6",
+    "/usr/lib/x86_64-linux-gnu/libXdmcp.so.6",
+    "/lib/x86_64-linux-gnu/libbsd.so.0",
+    "/usr/lib/x86_64-linux-gnu/libGL.so.1",
+    "/usr/lib/x86_64-linux-gnu/libGLX.so.0",
+    "/usr/lib/x86_64-linux-gnu/libGLdispatch.so.0",
+    "/usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0",
+    "/usr/lib/x86_64-linux-gnu/libxcb-dri3.so.0",
+    "/usr/lib/x86_64-linux-gnu/libxcb-present.so.0",
+    "/usr/lib/x86_64-linux-gnu/libxcb-sync.so.1",
+    "/usr/lib/x86_64-linux-gnu/libxshmfence.so.1",
+    "/usr/lib/x86_64-linux-gnu/libglapi.so.0",
+    "/usr/lib/x86_64-linux-gnu/libXdamage.so.1",
+    "/usr/lib/x86_64-linux-gnu/libXfixes.so.3",
+    "/usr/lib/x86_64-linux-gnu/libX11-xcb.so.1",
+    "/usr/lib/x86_64-linux-gnu/libxcb-glx.so.0",
+    "/usr/lib/x86_64-linux-gnu/libxcb-dri2.so.0",
+    "/usr/lib/x86_64-linux-gnu/libXxf86vm.so.1",
+    "/usr/lib/x86_64-linux-gnu/libdrm.so.2",
+    "/usr/lib/x86_64-linux-gnu/dri/radeonsi_dri.so",
+    "/usr/lib/x86_64-linux-gnu/libsensors.so.4",
+    "/usr/lib/x86_64-linux-gnu/libdrm_nouveau.so.2",
+    "/usr/lib/x86_64-linux-gnu/libdrm_radeon.so.1",
+    "/usr/lib/x86_64-linux-gnu/libdrm_amdgpu.so.1",
+    "/usr/lib/x86_64-linux-gnu/libelf.so.1",
+    "/usr/lib/x86_64-linux-gnu/libLLVM-7.so.1",
+    "/usr/lib/x86_64-linux-gnu/libedit.so.2",
+    "/lib/x86_64-linux-gnu/libtinfo.so.6",
+    "/lib/x86_64-linux-gnu/libnss_files.so.2"
+  ]
+}
