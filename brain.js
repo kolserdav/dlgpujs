@@ -81,25 +81,29 @@ class Brain {
                 }
                 resolve(res);
             })
-        });
+        })
+            .catch(err => {
+                assert.equal(null, err);
+                this.weights[this.data[i].digit] = null;
+            });
     }
 
     trainScript(i){
         return new Promise(resolve => {
-            const image = `./dataSets/${this.data[i].dbName}/${this.data[i].fileName}`
-        jimp.read(image)
+            const imagePath = `./dataSets/${this.data[i].dbName}/${this.data[i].fileName}`
+        jimp.read(imagePath)
         .then(image => {
-            const width = image.bitmap.width;
-            const heigth = image.bitmap.height;
+            let width = image.bitmap.width;
+            let height = image.bitmap.height;
             let array = nj.uint8(image.bitmap.data.toJSON().data);
-            array = array.reshape(heigth, width, 4);
+            array = array.reshape(height, width, 4);
             let list = array.tolist();
             const classWeight = this.data[i].digit;
             if (!this.weights[classWeight]){
                 let listWeigth = gpu.createKernel(function(){
                     return Math.random();
                 })
-                    .setOutput([4, width, heigth]);
+                    .setOutput([4, width, height]);
                 this.weights[classWeight] = listWeigth();
                 this.collection.insertOne({
                     class: classWeight,
@@ -109,7 +113,7 @@ class Brain {
                 });
                 
             }
-            const gpuKernel = gpu.createKernel(function(array, weight) {
+            const multiMatrix = gpu.createKernel(function(array, weight) {
                 if (this.thread.x !== 3){
                     return array[this.thread.z][this.thread.y][this.thread.x] * weight[this.thread.z][this.thread.y][this.thread.x];
                 }
@@ -117,15 +121,32 @@ class Brain {
                     return array[this.thread.z][this.thread.y][this.thread.x];
                 }
             })
-                .setOutput([4, width, heigth]);
-            list = gpuKernel(list, this.weights[classWeight]);
+                .setOutput([4, width, height]);
+            this.weights[classWeight] = this.weights[classWeight].map(item => {
+                const it = Object.values(item);
+                return it.map(item2 => {
+                    return Object.values(item2);
+                });
+            })
+            list = multiMatrix(list, this.weights[classWeight]);
+            const selectDigest = gpu.createKernel(function (array){
+                if (this.thread.x !== 3 && array[this.thread.z][this.thread.y][this.thread.x] < 40){
+                    return array[this.thread.z][this.thread.y][this.thread.x];
+                }
+                else {
+                    return 255;
+                }
+            })
+                .setOutput([4, width, height]);
+            list = selectDigest(list);
             array = nj.uint8(list);
-            array = array.reshape(heigth * width * 4)
+            array = array.reshape(height * width * 4);
             this.socket.json.send({
+                canvas: 2,
                 data: array,
                 dataPack: this.data,
                 width: width,
-                height: heigth
+                height: height
             }); 
             resolve('Success');
         })
